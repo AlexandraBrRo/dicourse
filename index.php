@@ -1,35 +1,57 @@
 <?php
 
-use DiStudy\DbServices\Pdo\Connection;
+use DiStudy\Configs\DbConfigsHardCode;
+use DiStudy\Configs\DbConfigsJson;
+//use DiStudy\DbServices\Pdo\Connection;
+//use DiStudy\DbServices\Pdo\Repository;
+use DiStudy\DbServices\Mysql\Connection;
+use DiStudy\DbServices\Mysql\Repository;
+
+require __DIR__ . '/vendor/autoload.php';
+
+//$json = 'dbConfig.json';
+//$a = file_get_contents($json);
+//$b = json_decode($a, true);
+//var_dump($a);
 
 
-class QueryBuilder{
-    private $db;
-    public function __construct(\DiStudy\Interfaces\ConnectionInterface $connection){
+//$dbConfigs = new DbConfigsHardCode();
+$dbConfigs = new DbConfigsJson('dbConfig.json');
+$connection = new Connection($dbConfigs);
+$repository= new Repository($connection);
 
-        $this->db = $connection;
+$users = $repository->select('users');
+$posts = $repository->select('posts');
 
-    }
-
-    public function select($tableName){
-        $statement = $this->db->query("SELECT * FROM $tableName");
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-    }
-    public function get(){
-
-    }
-}
+echo $users[0]['email'] . '<dr>';
+echo $posts[0]['title'];
 
 
 
 
-$users = $test->select('users');
-$posts = $test->select('posts');
-
-var_dump($users,$posts);
 
 
+
+
+//class QueryBuilder{
+//    private $db;
+//    public function __construct(\DiStudy\Interfaces\ConnectionInterface $connection){
+//
+//        $this->db = $connection;
+//
+//    }
+//
+//    public function select($tableName){
+//        $statement = $this->db->query("SELECT * FROM $tableName");
+//        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+//        return $result;
+//    }
+//    public function get(){
+//
+//    }
+//}
+
+//$connection = new Connection();
 
 
 //$dbConnect = new PDO("mysql:host=localhost;dbname=dicourse", 'root', '');

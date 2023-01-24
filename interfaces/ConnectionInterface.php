@@ -1,7 +1,8 @@
 <?php
 namespace DiStudy\Interfaces;
 
-interface ConnectionInterface{
+interface ConnectionInterface
+{
     public function make();
 }
 
