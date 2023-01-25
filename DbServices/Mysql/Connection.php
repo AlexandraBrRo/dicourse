@@ -3,6 +3,8 @@
 namespace DiStudy\DbServices\Mysql;
 
 use DiStudy\Interfaces\DbConfigInterface;
+use DiStudy\Interfaces\ConnectionInterface;
+
 
 class Connection implements ConnectionInterface
 {

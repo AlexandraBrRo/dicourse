@@ -3,9 +3,13 @@
 namespace DiStudy\DbServices\Mysql;
 
 use DiStudy\Interfaces\ConnectionInterface;
+use DiStudy\Interfaces\RepositoryInterface;
 
 class Repository implements RepositoryInterface
 {
+    /**
+     * @var $connection ConnectionInterface
+     */
     private ConnectionInterface $connection;
 
     public function __construct(ConnectionInterface $connection){
@@ -15,7 +19,8 @@ class Repository implements RepositoryInterface
     public function select($table)
     {
         $db = $this->connection->make();
-//        $db->mysqli_query("SELECT * FROM $table");
-        return $db->mysqli_query("SELECT * FROM $table");
+        $db->mysqli_query("SELECT * FROM $table");
+        return $db->fatch_assoc();
+
     }
 }
