@@ -27,7 +27,10 @@ $validators = [
         new SpecialSimbolValidator(),
 ];
 
-//$validators = new CompositeValidator();
+$composit = new CompositeValidator($validators);
+
+
+
 
 require __DIR__ . '/vendor/autoload.php';
 
