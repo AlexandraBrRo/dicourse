@@ -12,8 +12,5 @@
             "name": "AlexandraBrRo",
             "email": "alrobrand@gmail.com"
         }
-    ],
-    "require": {
-      "ext-json": "*"
-    }
+    ]
 }
