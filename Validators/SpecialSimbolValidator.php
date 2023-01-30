@@ -2,7 +2,9 @@
 
 namespace DiStudy\Validators;
 
-class SpecialSimbolValidator implements \DiStudy\Interfaces\ValidatorInterface
+use DiStudy\Interfaces\ValidatorInterface;
+
+class SpecialSimbolValidator implements ValidatorInterface
 {
 
     public function validate($value): bool

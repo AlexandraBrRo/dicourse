@@ -9,6 +9,12 @@
 
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+//include "vendor/autoload.php";
+
+
+
+
 use DiStudy\Configs\DbConfigsHardCode;
 //use DiStudy\Configs\DbConfigsJson;
 use DiStudy\DbServices\Pdo\Connection;
@@ -17,22 +23,18 @@ use DiStudy\DbServices\Pdo\Repository;
 //use DiStudy\DbServices\Mysql\Repository;
 
 use DiStudy\Validators\UpperCaseValidator;
-use DiStudy\Validators\NumberValidation;
+use DiStudy\Validators\NumberValidator;
 use DiStudy\Validators\SpecialSimbolValidator;
 use DiStudy\Validators\CompositeValidator;
 
 $validators = [
-        new UpperCaseValidator(),
-        new NumberValidation(),
-        new SpecialSimbolValidator(),
+    new SpecialSimbolValidator(),
+    new UpperCaseValidator(),
+    new NumberValidator(),
 ];
 
 $composit = new CompositeValidator($validators);
 
-
-
-
-require __DIR__ . '/vendor/autoload.php';
 
 $dbConfigs = new DbConfigsHardCode();
 //$dbConfigs = new DbConfigsJson('dbConfig.json');
@@ -41,9 +43,10 @@ $repository= new Repository($connection);
 
 
 
+
 if (isset($_POST['pass'])) : ?>
 
-<h1><?= $validators->validate($_POST['pass']) ? "Валідний" : "Не валідний" ?></h1>
+<h1><?= $composit->validate($_POST['pass']) ? "Валідний" : "Не валідний" ?></h1>
 
 <?php endif; ?>
 

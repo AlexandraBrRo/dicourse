@@ -21,7 +21,7 @@ return array(
     'DiStudy\\Interfaces\\RepositoryInterface' => $baseDir . '/interfaces/RepositoryInterface.php',
     'DiStudy\\Interfaces\\ValidatorInterface' => $baseDir . '/interfaces/ValidatorInterface.php',
     'DiStudy\\Validators\\CompositeValidator' => $baseDir . '/Validators/CompositeValidator.php',
-    'DiStudy\\Validators\\NumberValidation' => $baseDir . '/Validators/NumberValidation.php',
+    'DiStudy\\Validators\\NumberValidator' => $baseDir . '/Validators/NumberValidator.php',
     'DiStudy\\Validators\\SpecialSimbolValidator' => $baseDir . '/Validators/SpecialSimbolValidator.php',
     'DiStudy\\Validators\\UpperCaseValidator' => $baseDir . '/Validators/UpperCaseValidator.php',
 );

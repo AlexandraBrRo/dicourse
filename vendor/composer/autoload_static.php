@@ -16,7 +16,7 @@ class ComposerStaticInit45163892e0d926c09a75a764c065da7c
     public static $prefixDirsPsr4 = array (
         'DiStudy\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/',
         ),
     );
 
@@ -36,7 +36,7 @@ class ComposerStaticInit45163892e0d926c09a75a764c065da7c
         'DiStudy\\Interfaces\\RepositoryInterface' => __DIR__ . '/../..' . '/interfaces/RepositoryInterface.php',
         'DiStudy\\Interfaces\\ValidatorInterface' => __DIR__ . '/../..' . '/interfaces/ValidatorInterface.php',
         'DiStudy\\Validators\\CompositeValidator' => __DIR__ . '/../..' . '/Validators/CompositeValidator.php',
-        'DiStudy\\Validators\\NumberValidation' => __DIR__ . '/../..' . '/Validators/NumberValidation.php',
+        'DiStudy\\Validators\\NumberValidator' => __DIR__ . '/../..' . '/Validators/NumberValidator.php',
         'DiStudy\\Validators\\SpecialSimbolValidator' => __DIR__ . '/../..' . '/Validators/SpecialSimbolValidator.php',
         'DiStudy\\Validators\\UpperCaseValidator' => __DIR__ . '/../..' . '/Validators/UpperCaseValidator.php',
     );

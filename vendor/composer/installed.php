@@ -3,7 +3,7 @@
         'name' => 'ronn/dicourse',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '457cc0bfdbbd18b8da204aadb36f91cf1e781b95',
+        'reference' => '47bba146105ae0cdfb6503ac32b417a379f7bce2',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'ronn/dicourse' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '457cc0bfdbbd18b8da204aadb36f91cf1e781b95',
+            'reference' => '47bba146105ae0cdfb6503ac32b417a379f7bce2',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

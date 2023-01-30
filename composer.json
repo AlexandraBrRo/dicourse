@@ -1,16 +1,14 @@
 {
-    "name": "ronn/dicourse",
-    "autoload": {
-        "psr-4": {
-            "DiStudy\\": "src/"
-        },
-        "classmap": [""]
-    },
-
     "authors": [
         {
             "name": "AlexandraBrRo",
             "email": "alrobrand@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "DiStudy\\" : ""
+        },
+        "classmap" : [""]
+    }
 }

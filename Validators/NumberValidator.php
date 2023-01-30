@@ -2,7 +2,9 @@
 
 namespace DiStudy\Validators;
 
-class NumberValidation implements \DiStudy\Interfaces\ValidatorInterface
+use DiStudy\Interfaces\ValidatorInterface;
+
+class NumberValidator implements ValidatorInterface
 {
 
     public function validate($value): bool
@@ -10,3 +12,8 @@ class NumberValidation implements \DiStudy\Interfaces\ValidatorInterface
         return preg_match('~[0-9]~', $value);
     }
 }
+
+
+
+
+
