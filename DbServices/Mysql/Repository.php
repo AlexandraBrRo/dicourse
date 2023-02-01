@@ -18,9 +18,11 @@ class Repository implements RepositoryInterface
 
     public function select($table)
     {
-        $db = $this->connection->make();
-        $db->mysqli_query("SELECT * FROM $table");
-        return $db->fatch_assoc();
+//        $db = $this->connection->make();
+//        $db->mysqli_query("SELECT * FROM $table");
+//        return $db->fatch_assoc();
+        $query = $this->connection->make()->query('SELECT * FROM' . $table)->fetch_assoc();
+        return $query;
 
     }
 }

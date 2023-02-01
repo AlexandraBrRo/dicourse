@@ -14,7 +14,6 @@ class Connection implements ConnectionInterface{
     }
     public function make(): \PDO
     {
-        return new \PDO("mysql:host=" . $this->dbConfigs->getHostName() . ";dbname="
-            . $this->dbConfigs->getDbName(), $this->dbConfigs->getUserName(), $this->dbConfigs->getDbPassword());
+        return new \PDO("mysql:host=" . $this->dbConfigs->getHostName() . ";dbname=" . $this->dbConfigs->getDbName(), $this->dbConfigs->getUserName(), $this->dbConfigs->getDbPassword());
     }
 }

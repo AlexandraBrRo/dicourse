@@ -14,7 +14,7 @@ class Connection implements ConnectionInterface
         $this->dbConfigs = $config;
     }
 
-    public function make()
+    public function make() : \mysqli
     {
         return new \mysqli($this->dbConfigs->getHostName(), $this->dbConfigs->getUserName(), $this->dbConfigs->getDbPassword(),
         $this->dbConfigs->getDbName());

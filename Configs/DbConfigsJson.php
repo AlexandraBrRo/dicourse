@@ -8,33 +8,43 @@ class DbConfigsJson implements DbConfigInterface
 {
     private string $filename;
 
-    public function __construct($filename){
-        $this->filename = $filename;
+    private string $hostName;
+    private string $dbname;
+    private string $userName;
+    private string $password;
+
+    public function __construct($file = 'default.json'){
+        $this->filename = $file;
+        $this->getConfig();
     }
 
-    private function getConfig()
+    private function getConfig(): void
     {
         $configs = file_get_contents($this->filename);
-        return json_decode($configs, true);
+        $array = json_decode($configs, true);
+        $this->hostName = $array['hostname'];
+        $this->dbname = $array['db_name'];
+        $this->userName = $array['userName'];
+        $this->password = $array['password'];
     }
 
     public function getHostName(): string
     {
-        return $this->getConfig()['hostname'];
+        return $this->hostName;
     }
 
     public function getDbName(): string
     {
-        return $this->getConfig()['db_name'];
+        return $this->dbname;
     }
 
     public function getUserName(): string
     {
-        return $this->getConfig()['username'];
+        return $this->userName;
     }
 
     public function getDbPassword(): string
     {
-        return $this->getConfig()['password'];
+        return $this->password;
     }
 }
