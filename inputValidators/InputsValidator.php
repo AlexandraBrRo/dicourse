@@ -1,18 +1,18 @@
 <?php
 
-namespace DiStudy\Validators;
+namespace DiStudy\inputValidators;
 
-use DiStudy\interfaces\ValidatorInterface;
+use DiStudy\interfaces\ValidatorInputInterface;
 
-class CompositeValidator implements ValidatorInterface
+class InputsValidator implements ValidatorInputInterface
 {
     /**
-     * @var array ValidatorInterface[]
+     * @var array ValidatorInputInterface[]
      */
 
     private array $validators = [];
 
-    public function __construct($validators)
+    public function __construct(array $validators)
     {
         $this->validators = $validators;
     }

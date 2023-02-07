@@ -2,8 +2,8 @@
 
 namespace DiStudy\DbServices\Mysql;
 
-use DiStudy\Interfaces\ConnectionInterface;
-use DiStudy\Interfaces\RepositoryInterface;
+use DiStudy\interfaces\ConnectionInterface;
+use DiStudy\interfaces\RepositoryInterface;
 
 class Repository implements RepositoryInterface
 {

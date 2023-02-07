@@ -2,7 +2,7 @@
 
 namespace DiStudy\interfaces;
 
-interface ValidatorInterface
+interface ValidatorInputInterface
 {
     public function validate($value) : bool;
 }

@@ -1,9 +1,9 @@
 <?php
 
 namespace DiStudy\Configs;
-use DiStudy\Interfaces\DbConfigInterface;
+use DiStudy\interfaces\DbConfigInterfaces;
 
-class DbConfigsHardCode implements DbConfigInterface
+class DbConfigsHardCode implements DbConfigInterfaces
 {
    public function getHostName(): string
    {

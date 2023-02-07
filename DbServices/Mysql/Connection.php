@@ -2,15 +2,15 @@
 
 namespace DiStudy\DbServices\Mysql;
 
-use DiStudy\Interfaces\DbConfigInterface;
-use DiStudy\Interfaces\ConnectionInterface;
+use DiStudy\interfaces\DbConfigInterfaces;
+use DiStudy\interfaces\ConnectionInterface;
 
 
 class Connection implements ConnectionInterface
 {
     private $dbConfigs;
 
-    public function __construct(DbConfigInterface $config){
+    public function __construct(DbConfigInterfaces $config){
         $this->dbConfigs = $config;
     }
 

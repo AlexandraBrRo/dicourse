@@ -1,9 +1,10 @@
 <?php
 
-namespace DiStudy\Interfaces;
+namespace DiStudy\interfaces {
 
-interface RepositoryInterface
-{
-    public function select($table);
+    interface RepositoryInterface
+    {
+        public function select($table);
 
+    }
 }

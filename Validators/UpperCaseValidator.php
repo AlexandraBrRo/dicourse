@@ -2,7 +2,7 @@
 
 namespace DiStudy\Validators;
 
-use DiStudy\Interfaces\ValidatorInterface;
+use DiStudy\interfaces\ValidatorInterface;
 
 class UpperCaseValidator implements ValidatorInterface
 {

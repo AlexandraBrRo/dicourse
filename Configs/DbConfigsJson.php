@@ -2,9 +2,10 @@
 
 namespace DiStudy\Configs;
 
-use DiStudy\Interfaces\DbConfigInterface;
+use DiStudy\interfaces\DbConfigInterfaces;
 
-class DbConfigsJson implements DbConfigInterface
+
+class DbConfigsJson implements DbConfigInterfaces
 {
     private string $filename;
 
@@ -12,6 +13,7 @@ class DbConfigsJson implements DbConfigInterface
     private string $dbname;
     private string $userName;
     private string $password;
+
 
     public function __construct($file = 'default.json'){
         $this->filename = $file;
@@ -21,10 +23,10 @@ class DbConfigsJson implements DbConfigInterface
     private function getConfig(): void
     {
         $configs = file_get_contents($this->filename);
-        $array = json_decode($configs, true);
+        $array = json_decode($configs, true, 512, JSON_THROW_ON_ERROR);
         $this->hostName = $array['hostname'];
         $this->dbname = $array['db_name'];
-        $this->userName = $array['userName'];
+        $this->userName = $array['username'];
         $this->password = $array['password'];
     }
 

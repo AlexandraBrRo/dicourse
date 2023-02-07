@@ -2,13 +2,13 @@
 
 namespace DiStudy\DbServices\Pdo;
 
-use DiStudy\Interfaces\ConnectionInterface;
-use DiStudy\Interfaces\DbConfigInterface;
+use DiStudy\interfaces\ConnectionInterface;
+use DiStudy\interfaces\DbConfigInterfaces;
 
 
 class Connection implements ConnectionInterface{
     private $dbConfigs;
-    public function __construct(DbConfigInterface $config)
+    public function __construct(DbConfigInterfaces $config)
     {
         $this->dbConfigs = $config;
     }

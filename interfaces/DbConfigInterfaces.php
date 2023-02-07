@@ -1,8 +1,8 @@
 <?php
 
-namespace DiStudy\Interfaces;
+namespace DiStudy\interfaces;
 
-interface DbConfigInterface
+interface DbConfigInterfaces
 {
 
     public function getHostName() : string;
