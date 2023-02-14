@@ -10,9 +10,9 @@ class CompositeValidator implements ValidatorInterface
      * @var array ValidatorInterface[]
      */
 
-    private array $validators = [];
+    protected array $validators = [];
 
-    public function __construct($validators)
+    public function __construct(array $validators)
     {
         $this->validators = $validators;
     }
@@ -24,7 +24,6 @@ class CompositeValidator implements ValidatorInterface
                 return false;
             }
         }
-
         return true;
     }
 }

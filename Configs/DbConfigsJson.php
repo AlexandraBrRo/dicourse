@@ -10,12 +10,12 @@ class DbConfigsJson implements DbConfigInterfaces
     private string $filename;
 
     private string $hostName;
-    private string $dbname;
+    private string $dbName;
     private string $userName;
     private string $password;
 
 
-    public function __construct($file = 'default.json'){
+    public function __construct($file){
         $this->filename = $file;
         $this->getConfig();
     }
@@ -25,7 +25,7 @@ class DbConfigsJson implements DbConfigInterfaces
         $configs = file_get_contents($this->filename);
         $array = json_decode($configs, true, 512, JSON_THROW_ON_ERROR);
         $this->hostName = $array['hostname'];
-        $this->dbname = $array['db_name'];
+        $this->dbName = $array['db_name'];
         $this->userName = $array['username'];
         $this->password = $array['password'];
     }
@@ -37,7 +37,7 @@ class DbConfigsJson implements DbConfigInterfaces
 
     public function getDbName(): string
     {
-        return $this->dbname;
+        return $this->dbName;
     }
 
     public function getUserName(): string

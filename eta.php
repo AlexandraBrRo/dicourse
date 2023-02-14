@@ -1,37 +1,53 @@
+<form action="eta.php" method="get">
+    <input type="text" name="postcode" placeholder="postcode">
+    <input type="text" name="best" placeholder="best">
+    <input type="text" name="worst" placeholder="worst">
 
+    <button type="submit">set new eta</button>
+</form>
+
+<a href="index.php">first page</a>
 
 <?php
-
 use DiStudy\Configs\DbConfigsJson;
-use DiStudy\DbServices\Mysql\Connection;
+use DiStudy\DbServices\Pdo\Connection;
+use DiStudy\DbServices\PostcodeServices\PostcodeRepository;
+use DiStudy\inputValidators\NotEmpty;
+use DiStudy\inputValidators\NumberInputValidator;
+use DiStudy\inputValidators\NumberCountValidator;
+use DiStudy\inputValidators\InputsValidator;
 
-//$configsDB = new DbConfigsJson('etaDbConfigs.json');
-//$connection = new Connection($configsDB);
-//$connection->make();
+require __DIR__ . '/vendor/autoload.php';
 
-
-
-$validators = [
-    new SpecialSimbolValidator(),
-    new UpperCaseValidator(),
-    new NumberValidator(),
+$configsDB = new DbConfigsJson('etaDbConfigs.json');
+$connection = new Connection($configsDB);
+$repositoryPostcode = new PostcodeRepository($connection, 'shipping_food');
+$validatorsPostcode = [
+    new NotEmpty(),
+    new NumberInputValidator(),
+    new NumberCountValidator(4)
 ];
 
-$composit = new CompositeValidator($validators);
+$postcodeValidators = new InputsValidator($validatorsPostcode);
+$validatorsEta = [
+    new NotEmpty(),
+    new NumberInputValidator(),
+    new NumberCountValidator(2, 'false')
+];
+$etaValidators = new InputsValidator($validatorsEta);
 
 
-//$dbConfigs = new DbConfigsHardCode();
-$dbConfigs = new DbConfigsJson('dbConfig.json');
-$connection = new Connection($dbConfigs);
-$repository= new Repository($connection);
-
-
-
-
-if (isset($_POST['pass'])) : ?>
-
-    <h1><?= $composit->validate($_POST['pass']) ? "Валідний" : "Не валідний" ?></h1>
-
-<?php endif; ?>
-
-</form>
+if($_GET){
+    if($postcodeValidators->validate($_GET['postcode'])
+        && $etaValidators->validate($_GET['best'])
+        && $etaValidators->validate($_GET['worst'])
+    ){
+        if($_GET['best'] > $_GET['worst']){
+            echo 'best can`t be bigger than worst';
+        }else{
+            echo $setPostcode = $repositoryPostcode->setNewPostcode($_GET['postcode'], $_GET['best'], $_GET['worst']);
+        }
+    }else{
+    echo 'wrong postcode';
+    }
+}

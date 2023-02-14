@@ -2,21 +2,25 @@
 
 namespace DiStudy\DbServices\Mysql;
 
-use DiStudy\interfaces\DbConfigInterfaces;
-use DiStudy\interfaces\ConnectionInterface;
-
+use DiStudy\Interfaces\DbConfigInterfaces;
+use DiStudy\Interfaces\ConnectionInterface;
+use mysqli;
 
 class Connection implements ConnectionInterface
 {
-    private $dbConfigs;
+    private DbConfigInterfaces $dbConfigs;
 
-    public function __construct(DbConfigInterfaces $config){
+    public function __construct(DbConfigInterfaces $config)
+    {
         $this->dbConfigs = $config;
     }
 
-    public function make() : \mysqli
+    /**
+     * @return mysqli
+     */
+    public function make() : mysqli
     {
-        return new \mysqli($this->dbConfigs->getHostName(), $this->dbConfigs->getUserName(), $this->dbConfigs->getDbPassword(),
-        $this->dbConfigs->getDbName());
+        return new mysqli($this->dbConfigs->getHostName(),$this->dbConfigs->getUserName(),
+            $this->dbConfigs->getDbPassword(),$this->dbConfigs->getDbName());
     }
 }

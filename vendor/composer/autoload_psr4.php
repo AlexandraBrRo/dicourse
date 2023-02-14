@@ -6,8 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'League\\MimeTypeDetection\\' => array($vendorDir . '/league/mime-type-detection/src'),
-    'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
-    'Integral\\Flysystem\\Adapter\\' => array($vendorDir . '/integral/flysystem-pdo-adapter/src'),
+//    'League\\MimeTypeDetection\\' => array($vendorDir . '/league/mime-type-detection/src'),
+//    'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
+//    'Integral\\Flysystem\\Adapter\\' => array($vendorDir . '/integral/flysystem-pdo-adapter/src'),
     'DiStudy\\' => array($baseDir . '/'),
 );

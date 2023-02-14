@@ -5,15 +5,14 @@
             "email": "alrobrand@gmail.com"
         }
     ],
+    "require": {
+      "ext-pdo": "*"
+    },
+
     "autoload": {
         "psr-4": {
             "DiStudy\\" : ""
         },
-        "classmap" : [""],
-        "ext-json": "*"
-    },
-    "require": {
-        "ext-pdo": "*",
-        "integral/flysystem-pdo-adapter": "^1.0"
+        "classmap": [""]
     }
 }

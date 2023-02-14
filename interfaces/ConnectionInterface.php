@@ -1,5 +1,5 @@
 <?php
-namespace DiStudy\Interfaces;
+namespace DiStudy\interfaces;
 
 interface ConnectionInterface
 {

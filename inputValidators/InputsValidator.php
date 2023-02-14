@@ -10,7 +10,7 @@ class InputsValidator implements ValidatorInputInterface
      * @var array ValidatorInputInterface[]
      */
 
-    private array $validators = [];
+    protected array $validators = [];
 
     public function __construct(array $validators)
     {
@@ -19,8 +19,8 @@ class InputsValidator implements ValidatorInputInterface
 
     public function validate($value): bool
     {
-        foreach ($this->validators as $validator){
-            if(!$validator->validate($value)){
+        foreach ($this->validators as $validator) {
+            if (!$validator->validate($value)) {
                 return false;
             }
         }

@@ -2,7 +2,7 @@
   "configs": {
     "hostname" : "localhost",
     "db_name" : "dicourse",
-    "username" : "db_name",
+    "username" : "root",
     "password" : ""
   }
 }
