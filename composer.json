@@ -6,7 +6,8 @@
         }
     ],
     "require": {
-      "ext-pdo": "*"
+      "ext-pdo": "*",
+        "psr/container": "^2.0"
     },
 
     "autoload": {

@@ -28,6 +28,13 @@ use DiStudy\inputValidators\NumberInputValidator;
 use DiStudy\inputValidators\NumberCountValidator;
 use DiStudy\inputValidators\InputsValidator;
 
+use DiStudy\Container;
+$container = new Container();
+$container->set('DbConfigJson', function ($container){
+    new DbConfigsJson($container);
+});
+
+
 require __DIR__ . '/vendor/autoload.php';
 
 
